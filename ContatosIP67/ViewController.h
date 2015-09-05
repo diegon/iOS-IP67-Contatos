@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property IBOutlet UILabel *labelHello;
+@property IBOutlet UITextField *nome;
 
 @end
 
