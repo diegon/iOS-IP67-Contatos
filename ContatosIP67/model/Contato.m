@@ -10,6 +10,7 @@
 
 @implementation Contato
 
+// Analogo ao toString
 -(NSString *)description {
     return [NSString stringWithFormat:@"Nome: %@, Telefone: %@, Email: %@, Endereco: %@, Site: %@", self.nome, self.telefone, self.email, self.endereco, self.site];
 }

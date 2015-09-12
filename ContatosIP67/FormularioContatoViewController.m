@@ -34,7 +34,7 @@
     contato.site = self.site.text;
     
     NSLog(@"Dados: %@", [contato description]); // o metodo description é análogo ao toString
-    
+    // podemos fazer NSLog(@"Dados: %@", contato) que vai invocar o description automaticamente
 }
 
 @end

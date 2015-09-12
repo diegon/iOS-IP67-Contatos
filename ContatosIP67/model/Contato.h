@@ -15,6 +15,6 @@
 @property (strong) NSString *email;
 @property (strong) NSString *endereco;
 @property (strong) NSString *site;
--(NSString *) description;
+//-(NSString *) description; -- nao precisa declarar, analogo ao toString
 
 @end
