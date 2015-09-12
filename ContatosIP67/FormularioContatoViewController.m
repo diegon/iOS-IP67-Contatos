@@ -22,7 +22,8 @@
 - (id) init {
     self = [super init];
     if(self) {
-        self.contatos = [NSMutableArray new];
+        // Movido para ContatoDao
+        //self.contatos = [NSMutableArray new];
     }
     return self;
 }
@@ -33,7 +34,9 @@
 - (id) initWithCoder:(NSCoder *) aDecoder {
     self = [super initWithCoder: aDecoder];
     if(self) {
-        self.contatos = [NSMutableArray new];
+        // Movido para ContatoDao
+        //self.contatos = [NSMutableArray new];
+        self.dao = [ContatoDao contatoDaoInstance];
     }
     return self;
 }
@@ -58,18 +61,21 @@
     contato.email = self.email.text;
     contato.endereco = self.endereco.text;
     contato.site = self.site.text;
-
-    [self.contatos addObject:contato];
+    
+    //[self.contatos addObject:contato];
+    [self.dao adicionaContato:contato];
     
     // para um array o description já itera automaticamente.
-    NSLog(@"Array: %@", self.contatos);
+    //NSLog(@"Array: %@", self.contatos);
     // poderia ser:
     /*
     for (NSString *contato in contatos) {
         NSLog(@"%@", contato);
     }
     */
-    NSLog(@"Array lenght: %lu", self.contatos.count);
+    NSLog(@"Array: %@", self.dao.contatos);
+    //NSLog(@"Array lenght: %lu", self.contatos.count);
+    NSLog(@"Array lenght: %lu", self.dao.contatos.count);
     
     /*
     NSLog(@"Dados: %@", [contato description]); // o metodo description é análogo ao toString

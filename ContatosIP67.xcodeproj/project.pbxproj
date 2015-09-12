@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1A1C1171BA46EBD00303B0F /* ContatoDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A1C1161BA46EBD00303B0F /* ContatoDao.m */; };
 		E1CC2F151B9B1FC900CF8EA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F141B9B1FC900CF8EA3 /* main.m */; };
 		E1CC2F181B9B1FC900CF8EA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F171B9B1FC900CF8EA3 /* AppDelegate.m */; };
 		E1CC2F1B1B9B1FC900CF8EA3 /* ContatosIP67.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F191B9B1FC900CF8EA3 /* ContatosIP67.xcdatamodeld */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1A1C1151BA46EBD00303B0F /* ContatoDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContatoDao.h; path = ContatosIP67/dao/ContatoDao.h; sourceTree = "<group>"; };
+		E1A1C1161BA46EBD00303B0F /* ContatoDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContatoDao.m; path = ContatosIP67/dao/ContatoDao.m; sourceTree = "<group>"; };
 		E1CC2F0F1B9B1FC900CF8EA3 /* ContatosIP67.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosIP67.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CC2F131B9B1FC900CF8EA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CC2F141B9B1FC900CF8EA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,9 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1A1C1181BA46EC100303B0F /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				E1A1C1151BA46EBD00303B0F /* ContatoDao.h */,
+				E1A1C1161BA46EBD00303B0F /* ContatoDao.m */,
+			);
+			name = dao;
+			sourceTree = "<group>";
+		};
 		E1CC2F061B9B1FC900CF8EA3 = {
 			isa = PBXGroup;
 			children = (
+				E1A1C1181BA46EC100303B0F /* dao */,
 				E1CC2F791B9B7C7000CF8EA3 /* model */,
 				E1CC2F111B9B1FC900CF8EA3 /* ContatosIP67 */,
 				E1CC2F2E1B9B1FC900CF8EA3 /* ContatosIP67Tests */,
@@ -238,6 +251,7 @@
 				E1CC2F781B9B7C6B00CF8EA3 /* Contato.m in Sources */,
 				E1CC2F181B9B1FC900CF8EA3 /* AppDelegate.m in Sources */,
 				E1CC2F1B1B9B1FC900CF8EA3 /* ContatosIP67.xcdatamodeld in Sources */,
+				E1A1C1171BA46EBD00303B0F /* ContatoDao.m in Sources */,
 				E1CC2F1E1B9B1FC900CF8EA3 /* FormularioContatoViewController.m in Sources */,
 				E1CC2F151B9B1FC900CF8EA3 /* main.m in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContatoDao.h"
 
 @interface FormularioContatoViewController : UIViewController
 
@@ -15,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *endereco;
 @property (weak, nonatomic) IBOutlet UITextField *site;
-@property (strong) NSMutableArray *contatos; // o default é strong, atomic; nao precisaria colocar.
+// Movido para ContatoDao
+//@property (strong) NSMutableArray *contatos; // o default é strong, atomic; nao precisaria colocar.
+@property ContatoDao *dao;
 
 @end
 
