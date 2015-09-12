@@ -11,6 +11,7 @@
 
 @interface FormularioContatoViewController ()
 //@property (strong) NSMutableArray *contatos; // poderia colocar aqui
+@property Contato *contato;
 @end
 
 @implementation FormularioContatoViewController
@@ -45,6 +46,13 @@
 - (void)viewDidLoad {
     // é rodado uma unica vez no ciclo de vida do formulario
     //self.contatos = [NSMutableArray new];
+    UIBarButtonItem *botaoAdd = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(criaContato)];
+    
+    // @[] é um atalho para criar um array imutavel
+    // @"" é um atalho para criar uma string
+    // obtendo o navigation bar e adicionando botao na direita
+    self.navigationItem.rightBarButtonItems = @[botaoAdd];
+    self.navigationItem.title = @"Novo";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,18 +60,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)pegaDadosDoFormulario {
+- (void)pegaDadosDoFormulario {
     
-    Contato *contato = [Contato new];
+    // movido para metodo criaContato
+    //Contato *contato = [Contato new];
     
-    contato.nome = self.nome.text;
-    contato.telefone = self.telefone.text;
-    contato.email = self.email.text;
-    contato.endereco = self.endereco.text;
-    contato.site = self.site.text;
+    self.contato.nome = self.nome.text;
+    self.contato.telefone = self.telefone.text;
+    self.contato.email = self.email.text;
+    self.contato.endereco = self.endereco.text;
+    self.contato.site = self.site.text;
     
     //[self.contatos addObject:contato];
-    [self.dao adicionaContato:contato];
+    // movido para metodo criaContato
+    //[self.dao adicionaContato:contato];
     
     // para um array o description já itera automaticamente.
     //NSLog(@"Array: %@", self.contatos);
@@ -73,14 +83,37 @@
         NSLog(@"%@", contato);
     }
     */
-    NSLog(@"Array: %@", self.dao.contatos);
+    //NSLog(@"Array: %@", self.dao.contatos);
     //NSLog(@"Array lenght: %lu", self.contatos.count);
-    NSLog(@"Array lenght: %lu", self.dao.contatos.count);
+    //NSLog(@"Array lenght: %lu", self.dao.contatos.count);
     
     /*
     NSLog(@"Dados: %@", [contato description]); // o metodo description é análogo ao toString
     // podemos fazer NSLog(@"Dados: %@", contato) que vai invocar o description automaticamente
     */
+}
+
+- (void)criaContato {
+    
+    // adicionando o contato
+    self.contato = [Contato new];
+    [self pegaDadosDoFormulario];
+    [self.dao adicionaContato:self.contato];
+    
+    NSLog(@"Array lenght: %lu", self.dao.contatos.count);
+    
+    // criando e apresentando um alert
+    /*
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Titulo" message:@"Mensagem" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    */
+    
+    // removendo eu mesmo da pilha de telas, para retornar a anterior
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 @end
