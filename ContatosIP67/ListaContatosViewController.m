@@ -15,6 +15,14 @@
 
 @implementation ListaContatosViewController
 
+- (id)init {
+    self = [super init];
+    if(self) {
+        _dao = [ContatoDao contatoDaoInstance];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -34,6 +42,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+// CUSTOMIZACAO
+// customiza quantidade de secoes (implementacao padrao ja retorna 1)
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.dao total];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // cria o identificador uma vez só, nao recria em chamadas subsequentes
+    static NSString *identificador = @"cell";
+    
+    // recupera a celula com o identificador para reuso
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identificador];
+    if(!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identificador];
+    }
+
+    Contato *contato = [_dao contatoDaPosicao:indexPath.row];
+    cell.textLabel.text = contato.nome;
+    
+    return cell;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -45,7 +84,7 @@
 */
                              
 - (void)exibeFormulario {
-    NSLog(@"Exibindo form");
+    NSLog(@"Exibindo formulario para criacao de um novo contato");
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FormularioContatoViewController *formularioContatoViewController = [storyboard instantiateViewControllerWithIdentifier:@"Form_Contato"];
     [self.navigationController pushViewController:formularioContatoViewController animated:YES];

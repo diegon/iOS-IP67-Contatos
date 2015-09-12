@@ -14,5 +14,7 @@
 @property (readonly) NSMutableArray *contatos;
 - (void)adicionaContato:(Contato *) contato;
 + (ContatoDao *)contatoDaoInstance;
+- (NSInteger) total;
+- (Contato *)contatoDaPosicao:(NSInteger) index;
 
 @end

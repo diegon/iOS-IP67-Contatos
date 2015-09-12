@@ -1,0 +1,9 @@
+Estudos a parte:
+
+- i18n
+NSLocalizedString(@"texto", nil);
+Storyboard: base location
+
+- AFNetworking
+- Autolayout
+- Push notifications
