@@ -16,7 +16,7 @@
 @implementation ListaContatosViewController
 
 - (id)init {
-    self = [super init];
+    self = [super initWithStyle:UITableViewStyleGrouped];
     if(self) {
         _dao = [ContatoDao contatoDaoInstance];
     }
@@ -27,12 +27,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // criando botao para colocar no navigation bar, filho de UIButton
+    
+    //SEL exibeForm = @selector(exibeFormulario);
+    
     UIBarButtonItem *form = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(exibeFormulario)];
     
     // @[] é um atalho para criar um array imutavel
     // @"" é um atalho para criar uma string
     // obtendo o navigation bar e adicionando botao na direita
     self.navigationItem.rightBarButtonItems = @[form];
+    self.editButtonItem.title = @"Editar";
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     self.navigationItem.title = @"Contatos";
 }
@@ -67,6 +72,15 @@
     cell.textLabel.text = contato.nome;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(editingStyle == UITableViewCellEditingStyleDelete ) {
+        [_dao removeContatoDaPosicao:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

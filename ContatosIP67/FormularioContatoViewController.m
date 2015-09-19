@@ -46,7 +46,7 @@
 - (void)viewDidLoad {
     // é rodado uma unica vez no ciclo de vida do formulario
     //self.contatos = [NSMutableArray new];
-    UIBarButtonItem *botaoAdd = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(criaContato)];
+    UIBarButtonItem *botaoAdd = [[UIBarButtonItem alloc] initWithTitle:@"Adicionar" style:UIBarButtonItemStylePlain target:self action:@selector(criaContato)];
     
     // @[] é um atalho para criar um array imutavel
     // @"" é um atalho para criar uma string
@@ -113,6 +113,9 @@
     
     // removendo eu mesmo da pilha de telas, para retornar a anterior
     [self.navigationController popViewControllerAnimated:YES];
+    
+    // Volta para o root view controller destruindo todas as janelas empurradas (pushed)
+    //[self.navigationController popToRootViewControllerAnimated:YES];
     
 }
 

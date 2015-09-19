@@ -34,6 +34,10 @@ static ContatoDao *defaultDao = nil;
     NSLog(@"Contato adicionado: %@", contato);
 }
 
+- (void)removeContatoDaPosicao: (NSInteger) posicao {
+    [self.contatos removeObjectAtIndex:posicao];
+}
+
 - (NSInteger)total {
     return self.contatos.count;
 }
