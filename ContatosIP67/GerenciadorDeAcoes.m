@@ -29,7 +29,7 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
+    NSLog(@"index: %li", (long)buttonIndex);
 }
 
 @end
