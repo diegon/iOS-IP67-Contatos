@@ -19,6 +19,7 @@
 // Movido para ContatoDao
 //@property (strong) NSMutableArray *contatos; // o default é strong, atomic; nao precisaria colocar.
 @property ContatoDao *dao;
+@property Contato *contato;
 
 @end
 

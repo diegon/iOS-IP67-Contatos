@@ -11,7 +11,7 @@
 
 @interface FormularioContatoViewController ()
 //@property (strong) NSMutableArray *contatos; // poderia colocar aqui
-@property Contato *contato;
+//@property Contato *contato;
 @end
 
 @implementation FormularioContatoViewController
@@ -53,6 +53,14 @@
     // obtendo o navigation bar e adicionando botao na direita
     self.navigationItem.rightBarButtonItems = @[botaoAdd];
     self.navigationItem.title = @"Novo";
+    
+    if(self.contato) {
+        self.nome.text = self.contato.nome;
+        self.telefone.text = self.contato.telefone;
+        self.email.text = self.contato.email;
+        self.endereco.text = self.contato.endereco;
+        self.site.text = self.contato.site;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

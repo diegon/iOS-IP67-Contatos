@@ -16,7 +16,8 @@
 @implementation ListaContatosViewController
 
 - (id)init {
-    self = [super initWithStyle:UITableViewStyleGrouped];
+    //self = [super initWithStyle:UITableViewStyleGrouped];
+    self = [super init];
     if(self) {
         _dao = [ContatoDao contatoDaoInstance];
     }
@@ -83,6 +84,12 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _contatoSelecionado = [_dao contatoDaPosicao:indexPath.row];
+    [self exibeFormulario];
+    _contatoSelecionado = nil;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
@@ -101,6 +108,13 @@
     NSLog(@"Exibindo formulario para criacao de um novo contato");
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FormularioContatoViewController *formularioContatoViewController = [storyboard instantiateViewControllerWithIdentifier:@"Form_Contato"];
+    // ou poderia ser como abaixo
+    //FormularioContatoViewController *formularioContatoViewController = [storyboard instantiateInitialViewController];
+    
+    if(_contatoSelecionado) {
+        formularioContatoViewController.contato = _contatoSelecionado;
+    }
+    
     [self.navigationController pushViewController:formularioContatoViewController animated:YES];
 }
 
