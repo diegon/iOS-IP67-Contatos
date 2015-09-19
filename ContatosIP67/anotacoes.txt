@@ -7,3 +7,5 @@ Storyboard: base location
 - AFNetworking
 - Autolayout
 - Push notifications
+
+http://androidniceties.tumblr.com

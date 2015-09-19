@@ -27,6 +27,8 @@
 //@property (strong) NSMutableArray *contatos; // o default é strong, atomic; nao precisaria colocar.
 @property ContatoDao *dao;
 @property Contato *contato;
+
+// delegates SEMPRE tem q ser weak, esquecer isso pode gerar ilhas de isolamento e dar crash na VM
 @property (weak) id<FormularioContatoViewControllerDelegate> delegate;
 
 @end

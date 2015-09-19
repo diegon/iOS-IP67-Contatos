@@ -70,6 +70,14 @@
         self.navigationItem.rightBarButtonItems = @[botaoAdd];
         self.navigationItem.title = @"Novo";
     }
+    
+    // UITextField nao funciona, testar com um UILabel!!
+//    UITapGestureRecognizer *orelha = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(orelhaEscutou)];
+//    [self.nome addGestureRecognizer:orelha];
+}
+
+- (void)orelhaEscutou {
+    NSLog(@"escutou!");
 }
 
 - (void)didReceiveMemoryWarning {

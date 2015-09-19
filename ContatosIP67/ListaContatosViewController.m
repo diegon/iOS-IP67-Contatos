@@ -42,6 +42,14 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     self.navigationItem.title = @"Contatos";
+    
+    // CGPoint, CGRect, CGSize sao structs C que contem as informacoes
+//    UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)]
+//    [self.tableView indexPathForRowAtPoint:<#(CGPoint)#>];
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(exibeMaisAcoes:)];
+    [self.tableView addGestureRecognizer:longPress];
+
 }
 
 // para trocar o texto no evento de editar/cancelar edicao
@@ -155,6 +163,19 @@
 - (void)contatoAdicionado:(Contato *)contato {
     _linhaDestaque = [_dao buscaPosicaoDoContato:contato];
     NSLog(@"contato adicionado: %@", contato.nome);
+}
+
+- (void)exibeMaisAcoes:(UIGestureRecognizer *)gesture {
+    if(gesture.state == UIGestureRecognizerStateBegan) {
+        CGPoint ponto = [gesture locationInView:self.tableView];
+        NSIndexPath *index = [self.tableView indexPathForRowAtPoint:ponto];
+        
+        if(index) {
+            _contatoSelecionado = [self.dao contatoDaPosicao:index.row];
+            _gerenciador = [[GerenciadorDeAcoes alloc] initWithContato:_contatoSelecionado];
+            [self.gerenciador acoesDoController:self];
+        }
+    }
 }
 
 @end
