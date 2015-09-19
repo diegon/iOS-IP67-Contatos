@@ -45,21 +45,30 @@
 
 - (void)viewDidLoad {
     // é rodado uma unica vez no ciclo de vida do formulario
-    //self.contatos = [NSMutableArray new];
-    UIBarButtonItem *botaoAdd = [[UIBarButtonItem alloc] initWithTitle:@"Adicionar" style:UIBarButtonItemStylePlain target:self action:@selector(criaContato)];
-    
-    // @[] é um atalho para criar um array imutavel
-    // @"" é um atalho para criar uma string
-    // obtendo o navigation bar e adicionando botao na direita
-    self.navigationItem.rightBarButtonItems = @[botaoAdd];
-    self.navigationItem.title = @"Novo";
-    
     if(self.contato) {
         self.nome.text = self.contato.nome;
         self.telefone.text = self.contato.telefone;
         self.email.text = self.contato.email;
         self.endereco.text = self.contato.endereco;
         self.site.text = self.contato.site;
+        
+        UIBarButtonItem *botaoAdd = [[UIBarButtonItem alloc] initWithTitle:@"Alterar" style:UIBarButtonItemStylePlain target:self action:@selector(atualizaContato)];
+        
+        // @[] é um atalho para criar um array imutavel
+        // @"" é um atalho para criar uma string
+        // obtendo o navigation bar e adicionando botao na direita
+        self.navigationItem.rightBarButtonItems = @[botaoAdd];
+        self.navigationItem.title = @"Novo";
+        
+    } else {
+        //self.contatos = [NSMutableArray new];
+        UIBarButtonItem *botaoAdd = [[UIBarButtonItem alloc] initWithTitle:@"Adicionar" style:UIBarButtonItemStylePlain target:self action:@selector(criaContato)];
+        
+        // @[] é um atalho para criar um array imutavel
+        // @"" é um atalho para criar uma string
+        // obtendo o navigation bar e adicionando botao na direita
+        self.navigationItem.rightBarButtonItems = @[botaoAdd];
+        self.navigationItem.title = @"Novo";
     }
 }
 
@@ -124,6 +133,16 @@
     
     // Volta para o root view controller destruindo todas as janelas empurradas (pushed)
     //[self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
+- (void)atualizaContato {
+    
+    // IMPORTANTE!
+    // o contato que foi passado pelo ListaContatosViewController é passado por referencia, ai podemos altera-lo diretamente
+    [self pegaDadosDoFormulario];
+    // removendo eu mesmo da pilha de telas, para retornar a anterior
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
