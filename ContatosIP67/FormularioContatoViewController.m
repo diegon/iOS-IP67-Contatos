@@ -58,7 +58,7 @@
         // @"" é um atalho para criar uma string
         // obtendo o navigation bar e adicionando botao na direita
         self.navigationItem.rightBarButtonItems = @[botaoAdd];
-        self.navigationItem.title = @"Novo";
+        self.navigationItem.title = @"Atualizar";
         
     } else {
         //self.contatos = [NSMutableArray new];
