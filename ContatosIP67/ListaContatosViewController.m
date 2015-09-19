@@ -20,6 +20,7 @@
     self = [super init];
     if(self) {
         _dao = [ContatoDao contatoDaoInstance];
+        _linhaDestaque = -1;
     }
     return self;
 }
@@ -41,6 +42,20 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     self.navigationItem.title = @"Contatos";
+}
+
+// para trocar o texto no evento de editar/cancelar edicao
+// http://stackoverflow.com/questions/5425718/iphone-uitableview-change-default-edit-button-name
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    // Make sure you call super first
+    [super setEditing:editing animated:animated];
+    
+    if (editing) {
+        self.editButtonItem.title = NSLocalizedString(@"Cancelar", @"Cancelar");
+    } else {
+        self.editButtonItem.title = NSLocalizedString(@"Editar", @"Editar");
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,6 +109,17 @@
     [self.tableView reloadData];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    if(_linhaDestaque >= 0){
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_linhaDestaque inSection:0];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        _linhaDestaque = -1;
+    }
+
+}
+
 /*
 #pragma mark - Navigation
 
@@ -115,7 +141,20 @@
         formularioContatoViewController.contato = _contatoSelecionado;
     }
     
+    formularioContatoViewController.delegate = self;
+    
     [self.navigationController pushViewController:formularioContatoViewController animated:YES];
+}
+
+
+- (void)contatoAtualizado:(Contato *)contato {
+    _linhaDestaque = [_dao buscaPosicaoDoContato:contato];
+    NSLog(@"contato atualizado: %@", contato.nome);
+}
+
+- (void)contatoAdicionado:(Contato *)contato {
+    _linhaDestaque = [_dao buscaPosicaoDoContato:contato];
+    NSLog(@"contato adicionado: %@", contato.nome);
 }
 
 @end

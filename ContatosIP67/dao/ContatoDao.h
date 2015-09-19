@@ -16,6 +16,7 @@
 + (ContatoDao *)contatoDaoInstance;
 - (NSInteger) total;
 - (Contato *)contatoDaPosicao:(NSInteger) index;
-- (void)removeContatoDaPosicao: (NSInteger) posicao;
+- (void)removeContatoDaPosicao:(NSInteger) posicao;
+- (NSInteger)buscaPosicaoDoContato:(Contato *) contato;
 
 @end

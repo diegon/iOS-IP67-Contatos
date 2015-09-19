@@ -1,6 +1,6 @@
 Estudos a parte:
 
-- i18n
+- i18n (http://www.raywenderlich.com/64401/internationalization-tutorial-for-ios-2014)
 NSLocalizedString(@"texto", nil);
 Storyboard: base location
 

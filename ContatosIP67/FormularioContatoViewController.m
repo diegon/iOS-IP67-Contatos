@@ -128,6 +128,12 @@
     [self presentViewController:alert animated:YES completion:nil];
     */
     
+    // chamando o delegate
+    if(self.delegate) {
+        [self.delegate contatoAdicionado:self.contato];
+    }
+    // --
+    
     // removendo eu mesmo da pilha de telas, para retornar a anterior
     [self.navigationController popViewControllerAnimated:YES];
     
@@ -141,6 +147,13 @@
     // IMPORTANTE!
     // o contato que foi passado pelo ListaContatosViewController é passado por referencia, ai podemos altera-lo diretamente
     [self pegaDadosDoFormulario];
+    
+    // chamando o delegate
+    if(self.delegate) {
+        [self.delegate contatoAtualizado:self.contato];
+    }
+    // --
+    
     // removendo eu mesmo da pilha de telas, para retornar a anterior
     [self.navigationController popViewControllerAnimated:YES];
     

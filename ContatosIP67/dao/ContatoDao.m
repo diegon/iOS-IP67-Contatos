@@ -47,4 +47,8 @@ static ContatoDao *defaultDao = nil;
     return _contatos[index];
 }
 
+- (NSInteger)buscaPosicaoDoContato:(Contato *) contato {
+    return [self.contatos indexOfObject:contato];
+}
+
 @end

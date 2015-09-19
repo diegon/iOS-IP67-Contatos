@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ContatoDao.h"
 
+@protocol FormularioContatoViewControllerDelegate <NSObject>
+
+- (void)contatoAtualizado:(Contato *)contato;
+- (void)contatoAdicionado:(Contato *)contato;
+
+@end
+
 @interface FormularioContatoViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *nome;
@@ -20,6 +27,7 @@
 //@property (strong) NSMutableArray *contatos; // o default é strong, atomic; nao precisaria colocar.
 @property ContatoDao *dao;
 @property Contato *contato;
+@property (weak) id<FormularioContatoViewControllerDelegate> delegate;
 
 @end
 
