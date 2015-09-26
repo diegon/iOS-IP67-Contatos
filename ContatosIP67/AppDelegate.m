@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ListaContatosViewController.h"
 #import "ContatosNoMapaViewController.h"
+#import "NSString+DNString.h"
+#import "UIViewController+Navegacao.h"
 
 @interface AppDelegate ()
 
@@ -19,17 +21,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // Lista
     ListaContatosViewController *lista = [ListaContatosViewController new];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];
-    
     // Mapa
     ContatosNoMapaViewController *contatosMapa = [ContatosNoMapaViewController new];
     
     UITabBarController *tabBarController = [UITabBarController new];
-    tabBarController.viewControllers = @[nav, contatosMapa];
+    
+    // substituido pela inicializacao com categoria UIViewController+Navegacao.h
+    //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];
+    //UINavigationController *navMapa = [[UINavigationController alloc] initWithRootViewController:contatosMapa];
+    //tabBarController.viewControllers = @[nav, navMapa];
+    
+    // trocando inicializacao do tabbar com a categoria UIViewController+Navegacao.h
+    tabBarController.viewControllers = @[[lista comBarrinha], [contatosMapa comBarrinha]];
     
     //self.window.rootViewController = nav;
     self.window.rootViewController = tabBarController;
+    
+    // Teste da categoria NSString+DNString
+    // funciona parecido com o prototype do Javascript
+    [@"teste" comLog];
+    // --
     
     [self.window makeKeyAndVisible];
     

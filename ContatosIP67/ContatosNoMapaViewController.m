@@ -20,6 +20,7 @@
         // obtendo tabbar e editando a apresentacao
         self.tabBarItem.title = @"Mapa";
         self.tabBarItem.image = [UIImage imageNamed:@"mapa-contatos.png"];
+        self.navigationItem.title = @"Localização";
     }
     return self;
 }
@@ -27,6 +28,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // criando o mapa programaticamente
+//    float x = self.navigationController.view.frame.origin.x;
+//    float y = self.navigationController.view.frame.origin.y;
+//    float width = self.view.frame.size.width;
+//    float height = self.view.frame.size.height + self.tabBarController.view.frame.size.height + self.navigationController.view.frame.size.height;
+//    self.mapa = [[MKMapView alloc]initWithFrame:CGRectMake(x,y,width,height)];
+//    [self.view addSubview:self.mapa];
+    // --
+    
+    MKUserTrackingBarButtonItem *botaoLocalizacao = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapa];
+    self.navigationItem.rightBarButtonItem = botaoLocalizacao;
+
+    // links uteis
+    // http://stackoverflow.com/questions/28661963/locationmanager-requestwheninuseauthorization-not-working (propriedade do Info.plist para funcionar o requestWhenInUseAuthorization)
+    // http://nevan.net/2014/09/core-location-manager-changes-in-ios-8/
+    // --
+    self.manager = [CLLocationManager new];
+    //[self.manager requestAlwaysAuthorization]; // mostra ao abrir o view controller do mapa
+    [self.manager requestWhenInUseAuthorization]; // mostra ao abrir usar o botao de localizacao
 }
 
 - (void)didReceiveMemoryWarning {

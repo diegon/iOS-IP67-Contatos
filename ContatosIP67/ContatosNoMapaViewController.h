@@ -12,5 +12,6 @@
 @interface ContatosNoMapaViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapa;
+@property CLLocationManager *manager;
 
 @end

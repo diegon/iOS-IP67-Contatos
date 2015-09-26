@@ -25,6 +25,8 @@
 		E1DFEDD81BB6F8B3004A118C /* ContatosNoMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DFEDD61BB6F8B3004A118C /* ContatosNoMapaViewController.m */; };
 		E1DFEDD91BB6F8B3004A118C /* ContatosNoMapaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DFEDD71BB6F8B3004A118C /* ContatosNoMapaViewController.xib */; };
 		E1DFEDDB1BB70B7E004A118C /* Vila Mariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = E1DFEDDA1BB70B7E004A118C /* Vila Mariana.gpx */; };
+		E1DFEDDF1BB714B3004A118C /* NSString+DNString.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DFEDDE1BB714B3004A118C /* NSString+DNString.m */; };
+		E1DFEDE21BB7174A004A118C /* UIViewController+Navegacao.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DFEDE11BB7174A004A118C /* UIViewController+Navegacao.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,10 @@
 		E1DFEDD61BB6F8B3004A118C /* ContatosNoMapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContatosNoMapaViewController.m; sourceTree = "<group>"; };
 		E1DFEDD71BB6F8B3004A118C /* ContatosNoMapaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContatosNoMapaViewController.xib; sourceTree = "<group>"; };
 		E1DFEDDA1BB70B7E004A118C /* Vila Mariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Vila Mariana.gpx"; path = "ContatosIP67/assets/Vila Mariana.gpx"; sourceTree = "<group>"; };
+		E1DFEDDD1BB714B3004A118C /* NSString+DNString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DNString.h"; path = "ContatosIP67/NSString+DNString.h"; sourceTree = "<group>"; };
+		E1DFEDDE1BB714B3004A118C /* NSString+DNString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DNString.m"; path = "ContatosIP67/NSString+DNString.m"; sourceTree = "<group>"; };
+		E1DFEDE01BB7174A004A118C /* UIViewController+Navegacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Navegacao.h"; path = "ContatosIP67/UIViewController+Navegacao.h"; sourceTree = "<group>"; };
+		E1DFEDE11BB7174A004A118C /* UIViewController+Navegacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Navegacao.m"; path = "ContatosIP67/UIViewController+Navegacao.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		E1CC2F061B9B1FC900CF8EA3 = {
 			isa = PBXGroup;
 			children = (
+				E1DFEDE31BB7174E004A118C /* categories */,
 				E1DFEDDC1BB70B84004A118C /* assets */,
 				E1DFED9F1BB6EC94004A118C /* libs */,
 				E1A1C1181BA46EC100303B0F /* dao */,
@@ -194,6 +201,17 @@
 				E1DFEDDA1BB70B7E004A118C /* Vila Mariana.gpx */,
 			);
 			name = assets;
+			sourceTree = "<group>";
+		};
+		E1DFEDE31BB7174E004A118C /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				E1DFEDDD1BB714B3004A118C /* NSString+DNString.h */,
+				E1DFEDDE1BB714B3004A118C /* NSString+DNString.m */,
+				E1DFEDE01BB7174A004A118C /* UIViewController+Navegacao.h */,
+				E1DFEDE11BB7174A004A118C /* UIViewController+Navegacao.m */,
+			);
+			name = categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +323,8 @@
 				E1CC2F1B1B9B1FC900CF8EA3 /* ContatosIP67.xcdatamodeld in Sources */,
 				E1A1C1171BA46EBD00303B0F /* ContatoDao.m in Sources */,
 				E1CC2F1E1B9B1FC900CF8EA3 /* FormularioContatoViewController.m in Sources */,
+				E1DFEDE21BB7174A004A118C /* UIViewController+Navegacao.m in Sources */,
+				E1DFEDDF1BB714B3004A118C /* NSString+DNString.m in Sources */,
 				E17670B71BADEA7E00854282 /* GerenciadorDeAcoes.m in Sources */,
 				E1DFEDD81BB6F8B3004A118C /* ContatosNoMapaViewController.m in Sources */,
 				E1CC2F151B9B1FC900CF8EA3 /* main.m in Sources */,
