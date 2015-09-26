@@ -9,5 +9,10 @@ Storyboard: base location
 - Push notifications
 
 - Pair programming bitbucket (video)
+- cocoacontrols.com (menu lateral -> JASidePanels)
+- appetize.io
+- ScrollView, TableView e CollectionView
+- https://github.com/CocoaPods/Specs/tree/master/Specs (lista de libs no cocoapods)
+- https://guides.cocoapods.org/using/getting-started.html
 
 http://androidniceties.tumblr.com
