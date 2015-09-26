@@ -95,6 +95,12 @@
     Contato *contato = [_dao contatoDaPosicao:indexPath.row];
     cell.textLabel.text = contato.nome;
     
+    if(contato.foto) {
+        cell.imageView.image = contato.foto;
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"default_user.png"];
+    }
+    
     return cell;
 }
 

@@ -52,6 +52,13 @@
         self.endereco.text = self.contato.endereco;
         self.site.text = self.contato.site;
         
+        // arredondar bordas
+        // http://stackoverflow.com/questions/4754392/uiview-with-rounded-corners-and-drop-shadow
+        if(self.contato.foto) {
+            [self.botaoFoto setBackgroundImage:self.contato.foto forState:UIControlStateNormal];
+            [self.botaoFoto setTitle:nil forState:UIControlStateNormal];
+        }
+        
         UIBarButtonItem *botaoAdd = [[UIBarButtonItem alloc] initWithTitle:@"Alterar" style:UIBarButtonItemStylePlain target:self action:@selector(atualizaContato)];
         
         // @[] é um atalho para criar um array imutavel
@@ -96,6 +103,13 @@
     self.contato.endereco = self.endereco.text;
     self.contato.site = self.site.text;
     
+    // existe ternário:
+    //[self.botaoFoto backgroundImageForState:UIControlStateNormal] ? self.contato.foto = [self.botaoFoto backgroundImageForState:UIControlStateNormal] : nil;
+    
+    if([self.botaoFoto backgroundImageForState:UIControlStateNormal]) {
+        self.contato.foto = [self.botaoFoto backgroundImageForState:UIControlStateNormal];
+    }
+
     //[self.contatos addObject:contato];
     // movido para metodo criaContato
     //[self.dao adicionaContato:contato];
@@ -164,6 +178,30 @@
     
     // removendo eu mesmo da pilha de telas, para retornar a anterior
     [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+- (IBAction)selecionaFoto:(id)sender {
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        // camera
+    } else {
+        // biblioteca
+        UIImagePickerController *picker = [UIImagePickerController new];
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing = YES;
+        
+        picker.delegate = self;
+        
+        [self presentViewController:picker animated:YES completion:nil];
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *imagemSelecionada = [info valueForKey:UIImagePickerControllerEditedImage];
+    [self.botaoFoto setBackgroundImage:imagemSelecionada forState:UIControlStateNormal];
+    [self.botaoFoto setTitle:nil forState:UIControlStateNormal];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

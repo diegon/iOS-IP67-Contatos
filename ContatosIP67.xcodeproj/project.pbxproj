@@ -21,6 +21,7 @@
 		E1CC2F321B9B1FC900CF8EA3 /* ContatosIP67Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F311B9B1FC900CF8EA3 /* ContatosIP67Tests.m */; };
 		E1CC2F781B9B7C6B00CF8EA3 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F771B9B7C6B00CF8EA3 /* Contato.m */; };
 		E1DFED9E1BB6CE00004A118C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DFED9D1BB6CE00004A118C /* MessageUI.framework */; };
+		E1DFEDA41BB6EDBB004A118C /* default_user.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DFEDA31BB6EDBB004A118C /* default_user.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		E1CC2F761B9B7C6B00CF8EA3 /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contato.h; path = ContatosIP67/model/Contato.h; sourceTree = "<group>"; };
 		E1CC2F771B9B7C6B00CF8EA3 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contato.m; path = ContatosIP67/model/Contato.m; sourceTree = "<group>"; };
 		E1DFED9D1BB6CE00004A118C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E1DFEDA31BB6EDBB004A118C /* default_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_user.png; path = ContatosIP67/default_user.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,8 @@
 		E1CC2F061B9B1FC900CF8EA3 = {
 			isa = PBXGroup;
 			children = (
-				E1DFED9D1BB6CE00004A118C /* MessageUI.framework */,
+				E1DFEDA51BB6EDCA004A118C /* assets */,
+				E1DFED9F1BB6EC94004A118C /* libs */,
 				E1A1C1181BA46EC100303B0F /* dao */,
 				E1CC2F791B9B7C7000CF8EA3 /* model */,
 				E1CC2F111B9B1FC900CF8EA3 /* ContatosIP67 */,
@@ -163,6 +166,22 @@
 				E1CC2F771B9B7C6B00CF8EA3 /* Contato.m */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		E1DFED9F1BB6EC94004A118C /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				E1DFED9D1BB6CE00004A118C /* MessageUI.framework */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		E1DFEDA51BB6EDCA004A118C /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				E1DFEDA31BB6EDBB004A118C /* default_user.png */,
+			);
+			name = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +268,7 @@
 				E1CC2F211B9B1FC900CF8EA3 /* Main.storyboard in Resources */,
 				E1CC2F261B9B1FC900CF8EA3 /* LaunchScreen.xib in Resources */,
 				E1CC2F231B9B1FC900CF8EA3 /* Images.xcassets in Resources */,
+				E1DFEDA41BB6EDBB004A118C /* default_user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

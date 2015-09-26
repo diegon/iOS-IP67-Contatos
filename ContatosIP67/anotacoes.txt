@@ -8,4 +8,6 @@ Storyboard: base location
 - Autolayout
 - Push notifications
 
+- Pair programming bitbucket (video)
+
 http://androidniceties.tumblr.com

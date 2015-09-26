@@ -16,7 +16,7 @@
 
 @end
 
-@interface FormularioContatoViewController : UIViewController
+@interface FormularioContatoViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nome;
 @property (weak, nonatomic) IBOutlet UITextField *telefone;
@@ -30,6 +30,9 @@
 
 // delegates SEMPRE tem q ser weak, esquecer isso pode gerar ilhas de isolamento e dar crash na VM
 @property (weak) id<FormularioContatoViewControllerDelegate> delegate;
+
+@property (nonatomic, weak) IBOutlet UIButton *botaoFoto;
+- (IBAction)selecionaFoto:(id)sender;
 
 @end
 

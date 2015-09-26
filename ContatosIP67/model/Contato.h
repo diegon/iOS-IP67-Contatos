@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Contato : NSObject
 
@@ -16,5 +17,6 @@
 @property (strong) NSString *endereco;
 @property (strong) NSString *site;
 //-(NSString *) description; -- nao precisa declarar, analogo ao toString
+@property (strong) UIImage *foto;
 
 @end
