@@ -20,6 +20,7 @@
 		E1CC2F261B9B1FC900CF8EA3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CC2F241B9B1FC900CF8EA3 /* LaunchScreen.xib */; };
 		E1CC2F321B9B1FC900CF8EA3 /* ContatosIP67Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F311B9B1FC900CF8EA3 /* ContatosIP67Tests.m */; };
 		E1CC2F781B9B7C6B00CF8EA3 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F771B9B7C6B00CF8EA3 /* Contato.m */; };
+		E1DFED9E1BB6CE00004A118C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DFED9D1BB6CE00004A118C /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		E1CC2F311B9B1FC900CF8EA3 /* ContatosIP67Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContatosIP67Tests.m; sourceTree = "<group>"; };
 		E1CC2F761B9B7C6B00CF8EA3 /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contato.h; path = ContatosIP67/model/Contato.h; sourceTree = "<group>"; };
 		E1CC2F771B9B7C6B00CF8EA3 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contato.m; path = ContatosIP67/model/Contato.m; sourceTree = "<group>"; };
+		E1DFED9D1BB6CE00004A118C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DFED9E1BB6CE00004A118C /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +91,7 @@
 		E1CC2F061B9B1FC900CF8EA3 = {
 			isa = PBXGroup;
 			children = (
+				E1DFED9D1BB6CE00004A118C /* MessageUI.framework */,
 				E1A1C1181BA46EC100303B0F /* dao */,
 				E1CC2F791B9B7C7000CF8EA3 /* model */,
 				E1CC2F111B9B1FC900CF8EA3 /* ContatosIP67 */,
