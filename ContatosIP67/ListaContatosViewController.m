@@ -21,6 +21,10 @@
     if(self) {
         _dao = [ContatoDao contatoDaoInstance];
         _linhaDestaque = -1;
+        
+        // obtendo tabbar e editando a apresentacao
+        self.tabBarItem.title = @"Lista";
+        self.tabBarItem.image = [UIImage imageNamed:@"lista-contatos.png"];
     }
     return self;
 }

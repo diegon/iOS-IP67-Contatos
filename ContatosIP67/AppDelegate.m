@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ListaContatosViewController.h"
+#import "ContatosNoMapaViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,17 @@
     // Override point for customization after application launch.
     ListaContatosViewController *lista = [ListaContatosViewController new];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];
-    self.window.rootViewController = nav;
+    
+    // Mapa
+    ContatosNoMapaViewController *contatosMapa = [ContatosNoMapaViewController new];
+    
+    UITabBarController *tabBarController = [UITabBarController new];
+    tabBarController.viewControllers = @[nav, contatosMapa];
+    
+    //self.window.rootViewController = nav;
+    self.window.rootViewController = tabBarController;
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
