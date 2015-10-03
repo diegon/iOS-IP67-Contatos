@@ -23,4 +23,8 @@
     return self.nome;
 }
 
+- (NSString *) subtitle {
+    return self.endereco;
+}
+
 @end

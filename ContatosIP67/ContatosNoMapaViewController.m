@@ -8,6 +8,7 @@
 
 #import "ContatosNoMapaViewController.h"
 #import "ContatoDao.h"
+#import "MKMapView+ZoomOut.h"
 
 @interface ContatosNoMapaViewController ()
 
@@ -58,6 +59,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.mapa addAnnotations:self.contatos];
+    [self.mapa zoomOut];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

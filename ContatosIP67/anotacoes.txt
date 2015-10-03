@@ -28,4 +28,6 @@ Storyboard: base location
 - alfred - spotlight replacement
 - jumpcup - ctrl-c ctrl-v
 
+- https://github.com/caelum/onibus-ios/blob/master/Busao/MKMapView+ZoomOut.m
+
 http://androidniceties.tumblr.com

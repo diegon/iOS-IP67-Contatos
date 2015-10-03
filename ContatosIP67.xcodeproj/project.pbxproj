@@ -12,6 +12,7 @@
 		E1A1C1171BA46EBD00303B0F /* ContatoDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A1C1161BA46EBD00303B0F /* ContatoDao.m */; };
 		E1A1C11E1BA47E5000303B0F /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A1C11D1BA47E5000303B0F /* ListaContatosViewController.m */; };
 		E1A1C1201BA4BA5300303B0F /* anotacoes.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1A1C11F1BA4BA5300303B0F /* anotacoes.txt */; };
+		E1CA77251BC02ED0009030C7 /* MKMapView+ZoomOut.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CA77241BC02ED0009030C7 /* MKMapView+ZoomOut.m */; };
 		E1CC2F151B9B1FC900CF8EA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F141B9B1FC900CF8EA3 /* main.m */; };
 		E1CC2F181B9B1FC900CF8EA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F171B9B1FC900CF8EA3 /* AppDelegate.m */; };
 		E1CC2F1B1B9B1FC900CF8EA3 /* ContatosIP67.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1CC2F191B9B1FC900CF8EA3 /* ContatosIP67.xcdatamodeld */; };
@@ -51,6 +52,8 @@
 		E1A1C11C1BA47E5000303B0F /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
 		E1A1C11D1BA47E5000303B0F /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
 		E1A1C11F1BA4BA5300303B0F /* anotacoes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anotacoes.txt; sourceTree = "<group>"; };
+		E1CA77231BC02ED0009030C7 /* MKMapView+ZoomOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKMapView+ZoomOut.h"; path = "ContatosIP67/MKMapView+ZoomOut.h"; sourceTree = "<group>"; };
+		E1CA77241BC02ED0009030C7 /* MKMapView+ZoomOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKMapView+ZoomOut.m"; path = "ContatosIP67/MKMapView+ZoomOut.m"; sourceTree = "<group>"; };
 		E1CC2F0F1B9B1FC900CF8EA3 /* ContatosIP67.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosIP67.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CC2F131B9B1FC900CF8EA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CC2F141B9B1FC900CF8EA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				E1DFEDDE1BB714B3004A118C /* NSString+DNString.m */,
 				E1DFEDE01BB7174A004A118C /* UIViewController+Navegacao.h */,
 				E1DFEDE11BB7174A004A118C /* UIViewController+Navegacao.m */,
+				E1CA77231BC02ED0009030C7 /* MKMapView+ZoomOut.h */,
+				E1CA77241BC02ED0009030C7 /* MKMapView+ZoomOut.m */,
 			);
 			name = categories;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				E1CC2F781B9B7C6B00CF8EA3 /* Contato.m in Sources */,
 				E1CC2F181B9B1FC900CF8EA3 /* AppDelegate.m in Sources */,
 				E1A1C11E1BA47E5000303B0F /* ListaContatosViewController.m in Sources */,
+				E1CA77251BC02ED0009030C7 /* MKMapView+ZoomOut.m in Sources */,
 				E1CC2F1B1B9B1FC900CF8EA3 /* ContatosIP67.xcdatamodeld in Sources */,
 				E1A1C1171BA46EBD00303B0F /* ContatoDao.m in Sources */,
 				E1CC2F1E1B9B1FC900CF8EA3 /* FormularioContatoViewController.m in Sources */,

@@ -23,7 +23,9 @@
 @property (strong) NSNumber *latitude;
 @property (strong) NSNumber *longitude;
 
+// Contrato do MKAnnotation
 - (CLLocationCoordinate2D) coordinate;
 - (NSString *) title;
+- (NSString *) subtitle;
 
 @end
