@@ -15,4 +15,16 @@ Storyboard: base location
 - https://github.com/CocoaPods/Specs/tree/master/Specs (lista de libs no cocoapods)
 - https://guides.cocoapods.org/using/getting-started.html
 
+- ScrollView http://www.raywenderlich.com/76436/use-uiscrollview-scroll-zoom-content-swift
+- TableView
+- CollectionView http://www.raywenderlich.com/78550/beginning-ios-collection-views-swift-part-1
+
+- JetBrains AppCode (nao tinha geolocalizacao e nao funcionava bem com storyboard)
+- OCUnit, XCTest, Google Test and Kiwi testing
+- http://pastie.org
+- http://fuckingblocksyntax.com
+
+- alfred - spotlight replacement
+- jumpcup - ctrl-c ctrl-v
+
 http://androidniceties.tumblr.com

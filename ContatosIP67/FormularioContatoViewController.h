@@ -34,5 +34,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *botaoFoto;
 - (IBAction)selecionaFoto:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UITextField *latitude;
+@property (weak, nonatomic) IBOutlet UITextField *longitude;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *carregandoEndereco;
+
 @end
 

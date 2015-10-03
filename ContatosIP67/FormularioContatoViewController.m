@@ -8,6 +8,7 @@
 
 #import "FormularioContatoViewController.h"
 #import "Contato.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface FormularioContatoViewController ()
 //@property (strong) NSMutableArray *contatos; // poderia colocar aqui
@@ -51,6 +52,8 @@
         self.email.text = self.contato.email;
         self.endereco.text = self.contato.endereco;
         self.site.text = self.contato.site;
+        self.latitude.text = [self.contato.latitude stringValue];
+        self.longitude.text = [self.contato.longitude stringValue];
         
         // arredondar bordas
         // http://stackoverflow.com/questions/4754392/uiview-with-rounded-corners-and-drop-shadow
@@ -102,6 +105,8 @@
     self.contato.email = self.email.text;
     self.contato.endereco = self.endereco.text;
     self.contato.site = self.site.text;
+    self.contato.latitude = [NSNumber numberWithFloat:[self.latitude.text floatValue]];
+    self.contato.longitude = [NSNumber numberWithFloat:[self.longitude.text floatValue]];
     
     // existe ternário:
     //[self.botaoFoto backgroundImageForState:UIControlStateNormal] ? self.contato.foto = [self.botaoFoto backgroundImageForState:UIControlStateNormal] : nil;
@@ -192,7 +197,28 @@
         
         picker.delegate = self;
         
-        [self presentViewController:picker animated:YES completion:nil];
+        // posso colocar este bloco como parametro do completion
+//        void (^block) (void) = ^{
+//            // alerta com bloco
+//            [[[UIAlertView alloc] initWithTitle:@"Aviso"
+//                                        message:@"Capriche"
+//                                       delegate:nil
+//                              cancelButtonTitle:@"ok"
+//                              otherButtonTitles:nil] show];
+//        };
+//        
+//        [self presentViewController:picker animated:YES completion:block]
+        //
+        
+        [self presentViewController:picker animated:YES completion:^{
+            // alerta com bloco
+            [[[UIAlertView alloc] initWithTitle:@"Aviso"
+                                        message:@"Capriche"
+                                       delegate:nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil] show];
+        }];
+        
     }
 }
 
@@ -202,6 +228,41 @@
     [self.botaoFoto setBackgroundImage:imagemSelecionada forState:UIControlStateNormal];
     [self.botaoFoto setTitle:nil forState:UIControlStateNormal];
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (IBAction)buscarCoordenadas:(UIButton *)sender {
+    
+    if ([self.endereco.text isEqualToString:@""]) {
+        [[[UIAlertView alloc] initWithTitle:@"Aviso"
+                                    message:@"Preencha o endereco"
+                                   delegate:nil
+                          cancelButtonTitle:@"ok"
+                          otherButtonTitles:nil] show];
+        return;
+    }
+    
+    [self.carregandoEndereco startAnimating];
+    sender.hidden = YES;
+    
+    CLGeocoder *geo = [CLGeocoder new];
+    
+    [geo geocodeAddressString:self.endereco.text completionHandler:^(NSArray *resultados, NSError *error) {
+        if(error == nil && [resultados count] > 0) {
+            CLPlacemark *resultado = resultados[0];
+            CLLocationCoordinate2D coordenada = resultado.location.coordinate;
+            self.latitude.text = [NSString stringWithFormat:@"%f",coordenada.latitude];
+            self.longitude.text = [NSString stringWithFormat:@"%f",coordenada.longitude];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Aviso"
+                                        message:@"Nenhum resultado encontrado"
+                                       delegate:nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil] show];
+        }
+        [self.carregandoEndereco stopAnimating];
+        sender.hidden = NO;
+    }];
     
 }
 

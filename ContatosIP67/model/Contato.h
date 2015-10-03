@@ -18,5 +18,7 @@
 @property (strong) NSString *site;
 //-(NSString *) description; -- nao precisa declarar, analogo ao toString
 @property (strong) UIImage *foto;
+@property (strong) NSNumber *latitude;
+@property (strong) NSNumber *longitude;
 
 @end

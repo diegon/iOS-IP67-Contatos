@@ -12,7 +12,7 @@
 
 // Analogo ao toString
 -(NSString *)description {
-    return [NSString stringWithFormat:@"Nome: %@, Telefone: %@, Email: %@, Endereco: %@, Site: %@", self.nome, self.telefone, self.email, self.endereco, self.site];
+    return [NSString stringWithFormat:@"Nome: %@, Telefone: %@, Email: %@, Endereco: %@, Latitude: %@, Longitude: %@, Site: %@", self.nome, self.telefone, self.email, self.endereco, self.latitude, self.longitude, self.site];
 }
 
 @end
