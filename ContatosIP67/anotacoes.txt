@@ -14,6 +14,7 @@ Storyboard: base location
 - ScrollView, TableView e CollectionView
 - https://github.com/CocoaPods/Specs/tree/master/Specs (lista de libs no cocoapods)
 - https://guides.cocoapods.org/using/getting-started.html
+- Mantle
 
 - ScrollView http://www.raywenderlich.com/76436/use-uiscrollview-scroll-zoom-content-swift
 - TableView
