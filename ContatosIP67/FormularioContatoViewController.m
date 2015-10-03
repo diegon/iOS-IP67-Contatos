@@ -140,7 +140,9 @@
 - (void)criaContato {
     
     // adicionando o contato
-    self.contato = [Contato new];
+    // Utilizando o CoreData
+    //self.contato = [Contato new];
+    self.contato = [self.dao criaNovo];
     [self pegaDadosDoFormulario];
     [self.dao adicionaContato:self.contato];
     
@@ -164,6 +166,9 @@
     // removendo eu mesmo da pilha de telas, para retornar a anterior
     [self.navigationController popViewControllerAnimated:YES];
     
+    // Salvando no banco de dados
+    [self.dao saveContext];
+    
     // Volta para o root view controller destruindo todas as janelas empurradas (pushed)
     //[self.navigationController popToRootViewControllerAnimated:YES];
     
@@ -180,6 +185,9 @@
         [self.delegate contatoAtualizado:self.contato];
     }
     // --
+    
+    // Salvando no banco de dados
+    [self.dao saveContext];
     
     // removendo eu mesmo da pilha de telas, para retornar a anterior
     [self.navigationController popViewControllerAnimated:YES];

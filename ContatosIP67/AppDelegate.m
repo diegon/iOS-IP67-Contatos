@@ -44,6 +44,11 @@
     [@"teste" comLog];
     // --
     
+    // -- insere dados default para o app
+//    ContatoDao *dao = [ContatoDao contatoDaoInstance];
+//    [dao inserirDados];
+    // --
+    
     [self.window makeKeyAndVisible];
     
     return YES;

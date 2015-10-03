@@ -19,5 +19,8 @@
 - (void)removeContatoDaPosicao:(NSInteger) posicao;
 - (NSInteger)buscaPosicaoDoContato:(Contato *) contato;
 - (NSArray *)lista;
+- (Contato *)criaNovo;
+- (void)inserirDados;
+- (void)saveContext;
 
 @end

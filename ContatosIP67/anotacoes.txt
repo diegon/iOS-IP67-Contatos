@@ -3,6 +3,7 @@ Estudos a parte:
 - i18n (http://www.raywenderlich.com/64401/internationalization-tutorial-for-ios-2014)
 NSLocalizedString(@"texto", nil);
 Storyboard: base location
+- Livro: iOS Programming: The Big Nerd Ranch Guide
 
 - AFNetworking
 - Autolayout

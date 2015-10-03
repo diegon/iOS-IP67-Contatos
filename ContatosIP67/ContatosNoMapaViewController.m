@@ -92,10 +92,16 @@
             pino.leftCalloutAccessoryView = imagemContato;
         }
         
+        pino.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
         return pino;
     }
     
     return nil;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    NSLog(@"clicou no callout %@", control);
 }
 
 /*
