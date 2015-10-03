@@ -261,7 +261,7 @@
                               otherButtonTitles:nil] show];
         }
         [self.carregandoEndereco stopAnimating];
-        sender.hidden = NO;
+        sender.hidden = NO; 
     }];
     
 }
