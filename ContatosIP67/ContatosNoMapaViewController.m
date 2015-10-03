@@ -55,6 +55,7 @@
     self.manager = [CLLocationManager new];
     //[self.manager requestAlwaysAuthorization]; // mostra ao abrir o view controller do mapa
     [self.manager requestWhenInUseAuthorization]; // mostra ao abrir usar o botao de localizacao
+    //self.mapa.delegate = self; // me tornando chefe do mapa, mas pode fazer visualmente pelo .xib (botao direito na view)
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,6 +70,32 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    if([annotation isKindOfClass:[Contato class]]) {
+        Contato *contato = (Contato *) annotation;
+        static NSString *identificador = @"pino";
+        MKPinAnnotationView *pino = (MKPinAnnotationView *) [self.mapa dequeueReusableAnnotationViewWithIdentifier:identificador];
+        if(!pino) {
+            pino = [[MKPinAnnotationView alloc] initWithAnnotation:contato reuseIdentifier:identificador];
+        } else {
+            pino.annotation = annotation;
+        }
+        
+        pino.pinColor = MKPinAnnotationColorGreen;
+        pino.canShowCallout = YES;
+        
+        if(contato.foto) {
+            UIImageView *imagemContato = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 32.0, 32.0)];
+            imagemContato.image = contato.foto;
+            pino.leftCalloutAccessoryView = imagemContato;
+        }
+        
+        return pino;
+    }
+    
+    return nil;
 }
 
 /*
