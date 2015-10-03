@@ -7,8 +7,12 @@
 //
 
 #import "ContatosNoMapaViewController.h"
+#import "ContatoDao.h"
 
 @interface ContatosNoMapaViewController ()
+
+@property (nonatomic, strong) ContatoDao *dao;
+@property (nonatomic, strong) NSArray *contatos;
 
 @end
 
@@ -21,6 +25,8 @@
         self.tabBarItem.title = @"Mapa";
         self.tabBarItem.image = [UIImage imageNamed:@"mapa-contatos.png"];
         self.navigationItem.title = @"Localização";
+        self.dao = [ContatoDao contatoDaoInstance];
+        self.contatos = [self.dao lista];
     }
     return self;
 }
@@ -48,6 +54,14 @@
     self.manager = [CLLocationManager new];
     //[self.manager requestAlwaysAuthorization]; // mostra ao abrir o view controller do mapa
     [self.manager requestWhenInUseAuthorization]; // mostra ao abrir usar o botao de localizacao
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.mapa addAnnotations:self.contatos];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.mapa removeAnnotations:self.contatos];
 }
 
 - (void)didReceiveMemoryWarning {

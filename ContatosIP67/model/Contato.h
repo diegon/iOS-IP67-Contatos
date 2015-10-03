@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface Contato : NSObject
+@interface Contato : NSObject<MKAnnotation>
 
 @property (strong) NSString *nome;
 @property (strong) NSString *telefone;
@@ -20,5 +22,8 @@
 @property (strong) UIImage *foto;
 @property (strong) NSNumber *latitude;
 @property (strong) NSNumber *longitude;
+
+- (CLLocationCoordinate2D) coordinate;
+- (NSString *) title;
 
 @end

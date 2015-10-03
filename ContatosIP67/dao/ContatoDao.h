@@ -18,5 +18,6 @@
 - (Contato *)contatoDaPosicao:(NSInteger) index;
 - (void)removeContatoDaPosicao:(NSInteger) posicao;
 - (NSInteger)buscaPosicaoDoContato:(Contato *) contato;
+- (NSArray *)lista;
 
 @end

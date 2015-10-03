@@ -11,8 +11,16 @@
 @implementation Contato
 
 // Analogo ao toString
--(NSString *)description {
+- (NSString *)description {
     return [NSString stringWithFormat:@"Nome: %@, Telefone: %@, Email: %@, Endereco: %@, Latitude: %@, Longitude: %@, Site: %@", self.nome, self.telefone, self.email, self.endereco, self.latitude, self.longitude, self.site];
+}
+
+- (CLLocationCoordinate2D) coordinate {
+    return CLLocationCoordinate2DMake([self.latitude floatValue], [self.longitude floatValue]);
+}
+
+- (NSString *) title {
+    return self.nome;
 }
 
 @end

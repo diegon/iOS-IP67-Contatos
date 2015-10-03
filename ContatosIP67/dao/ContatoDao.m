@@ -51,4 +51,8 @@ static ContatoDao *defaultDao = nil;
     return [self.contatos indexOfObject:contato];
 }
 
+- (NSArray *)lista {
+    return self.contatos;
+}
+
 @end
